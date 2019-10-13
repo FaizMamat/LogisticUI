@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>shippingtime</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <form [formGroup]="ScheduleForm">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4">
+            <ion-label>Day</ion-label>
+          </ion-col>
+          <ion-col size="8">
+            <app-select-list
+              [options]="dayOptions"
+              [selectedValue]="ScheduleForm.value.type"
+              (selectOption)="onSelectDay($event)"
+            ></app-select-list>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <ion-label>Time</ion-label>
+          </ion-col>
+          <ion-col size="8">
+            <app-select-list
+              [options]="timeOptions"
+              [selectedValue]="ScheduleForm .value.time"
+              (selectOption)="onSelectTime($event)"
+            ></app-select-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </ion-content>
+  
+  <ion-footer>
+      <ion-toolbar>
+        <ion-buttons slot="end">
+          <ion-button (click)="onClickNext()">Submit</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>

@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cargo Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="CargoForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label>Type</ion-label>
+        </ion-col>
+        <ion-col size="8">
+          <app-select-list
+            [options]="typeOptions"
+            [selectedValue]="CargoForm.value.type"
+            (selectOption)="onSelectType($event)"
+          ></app-select-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label>Weight</ion-label>
+        </ion-col>
+        <ion-col size="8">
+          <app-select-list
+            [options]="weightOptions"
+            [selectedValue]="CargoForm.value.weight"
+            (selectOption)="onSelectWeight($event)"
+          ></app-select-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <ion-label>Dimension</ion-label>
+        </ion-col>
+        <ion-col size="8">
+          <app-select-list
+            [options]="dimensionOptions"
+            [selectedValue]="CargoForm.value.dimension"
+            (selectOption)="onSelectDimension($event)"
+          ></app-select-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="end" *ngIf="isValid()">
+      <ion-button [disabled]="!isValid()" (click)="onClickNext()">Next</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
