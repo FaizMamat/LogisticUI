@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>shippingtime</ion-title>
+    <ion-title>Shipping Time</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,7 +14,7 @@
           <ion-col size="8">
             <app-select-list
               [options]="dayOptions"
-              [selectedValue]="ScheduleForm.value.type"
+              [selectedValue]="ScheduleForm.value.day"
               (selectOption)="onSelectDay($event)"
             ></app-select-list>
           </ion-col>
@@ -26,7 +26,7 @@
           <ion-col size="8">
             <app-select-list
               [options]="timeOptions"
-              [selectedValue]="ScheduleForm .value.time"
+              [selectedValue]="ScheduleForm.value.time"
               (selectOption)="onSelectTime($event)"
             ></app-select-list>
           </ion-col>

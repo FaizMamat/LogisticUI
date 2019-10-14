@@ -32,11 +32,11 @@ export class ShippingtimePage implements OnInit {
   }
 
   onSelectDay(day){
-    this.ScheduleForm.controls.date.setValue(day)
+    this.ScheduleForm.controls.day.setValue(day)
   }
 
   onSelectTime(time){
-    this.ScheduleForm.controls.weight.setValue(time)
+    this.ScheduleForm.controls.time.setValue(time)
   }
 
 
